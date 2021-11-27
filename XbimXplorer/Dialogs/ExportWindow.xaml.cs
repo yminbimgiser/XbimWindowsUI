@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using Xbim.Common.Geometry;
 using Xbim.Ifc;
 
 namespace XbimXplorer.Dialogs
@@ -58,7 +59,8 @@ namespace XbimXplorer.Dialogs
                     {
                         try
                         {
-                            _mainWindow.Model.SaveAsWexBim(bw);
+                            IVector3D trans = new XbimVector3D(-495477, -4214500, -1000);
+                            _mainWindow.Model.SaveAsWexBim(bw, null, trans);
                         }
                         finally
                         {
