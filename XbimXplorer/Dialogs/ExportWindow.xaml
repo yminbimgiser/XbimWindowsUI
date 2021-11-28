@@ -1,8 +1,8 @@
 ﻿<Window x:Class="XbimXplorer.Dialogs.ExportWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Export" Height="250" Width="700"
-        MinHeight="200" MinWidth="500" Icon="pack://siteoforigin:,,,/xBIM.ico"
+        Title="Export" Height="300" Width="700"
+        MinHeight="250" MinWidth="500" Icon="pack://siteoforigin:,,,/xBIM.ico"
         >
     <Grid MinWidth="400" MinHeight="200" >
         <TabControl Margin="10,10,10,45">
@@ -12,20 +12,25 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="51*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="100*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Grid.Row="0" Content="Export folder" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
-                    <TextBox x:Name="TxtFolderName" Grid.Row="0" Grid.Column="1" Height="23" TextWrapping="NoWrap" Text="" VerticalAlignment="Center" Margin="5"  />
+                    <Label Grid.Column="0" Grid.Row="1" Content="Export folder" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
+                    <TextBox x:Name="TxtFolderName" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="1" Height="23" TextWrapping="NoWrap" Text="" VerticalAlignment="Center" Margin="5"  />
+
+                    <!--偏移值-->
+                    <Label Grid.Column="0" Grid.Row="0" Content="Translation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
+                    <TextBox x:Name="TxtTranslation" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1" Height="23" TextWrapping="NoWrap" Text="-495477, -4214500, -1200" VerticalAlignment="Center" Margin="5"  />
+
+                    <Button Grid.Column="1" HorizontalAlignment="Right" Grid.Row="2" Content="Select folder" Width="120" Height="24" Margin="5" Click="SelectOutputPath"/>
                     
-                    <Button Grid.Column="1" HorizontalAlignment="Right" Grid.Row="1" Content="Select folder" Width="120" Height="24" Margin="5"  />
-                    <Label Grid.Column="0" Grid.Row="2" Content="Active exports" 
-                           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" 
-                           />
-                    <CheckBox Grid.Column="1" Grid.Row="2"  IsEnabled="False"  x:Name="ChkWexbim" Content="Xbim web geometry format (Wexbim)" IsChecked="True" 
+                    <Label Grid.Column="0" Grid.Row="3" Content="Active exports" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
+                    <CheckBox Grid.Column="1" Grid.Row="3"  IsEnabled="False"  x:Name="ChkWexbim" Content="Xbim web geometry format (Wexbim)" IsChecked="True" 
                               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" 
                               />
                 </Grid>
